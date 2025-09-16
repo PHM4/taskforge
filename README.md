@@ -1,69 +1,32 @@
-# React + TypeScript + Vite
+# TaskForge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TaskForge is a **full-stack task management web application** built with **React**, **TypeScript**, **Firebase Authentication** and **Cloud Firestore**.  
+It enables users to register and log in securely, create and manage multiple projects, add, edit and delete tasks with due dates and statuses, and see real-time updates across devices. The interface is styled with **TailwindCSS** and deployed on **Firebase Hosting**.
 
-Currently, two official plugins are available:
+![TaskForge Screenshot](./screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 🔐 **Secure Authentication** – Firebase Auth for user registration and login  
+- 📂 **Projects** – Create, edit and delete projects, each with its own task list  
+- ✅ **Tasks** – Add, edit, delete tasks; mark as to-do or done; due date support  
+- ⚡ **Real-time Updates** – Cloud Firestore keeps data in sync across devices  
+- 🎨 **Responsive UI** – TailwindCSS for clean, modern styling  
+- ☁️ **Deployment** – Firebase Hosting for fast, free hosting
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend**: React + Vite + TypeScript
+- **Authentication**: Firebase Authentication
+- **Database**: Cloud Firestore (per-user projects & tasks)
+- **Styling**: TailwindCSS
+- **Hosting**: Firebase Hosting
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Getting Started Locally
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Clone the repository and install dependencies:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+git clone https://github.com/PHM4/taskforge.git
+cd taskforge
+npm install
